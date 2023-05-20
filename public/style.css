@@ -157,3 +157,7 @@ table.table .avatar {
     margin-top: 10px;
     font-size: 13px;
 }
+.container{
+    justify-content: center;
+    align-items: center;
+}
