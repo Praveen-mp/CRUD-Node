@@ -19,14 +19,13 @@ router.post('/add', upload, async function (req, res) {
   try {
     const { name, email, phone } = req.body;
     const image = req.file.filename;
-
+    
     const user = new User({
       name,
       email,
       phone,
       image
     });
-
     await user.save();
     res.redirect('/');
   } catch (error) {
@@ -37,7 +36,18 @@ router.post('/add', upload, async function (req, res) {
 
 // Route handler for the homepage
 router.get('/', (req, res) => {
-  res.render('index',{title:"Home page"});
+  User.find().exec()
+  .then((user) => {
+    // Handle the query result here
+    res.render("index",{
+      title:"Home page",
+      user:user
+    })
+  })
+  .catch((error) => {
+    // Handle any errors that occur during the query
+    console.error(error);
+  });
 });
 router.get('/add',(req,res)=>{
    res.render('addUsers',{title:"Adduser"});
