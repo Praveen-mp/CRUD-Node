@@ -1,7 +1,6 @@
 {
   "name": "contact_backend",
   "version": "1.0.0",
-  "description": "",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -22,5 +21,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Praveen-mp/CRUD-Node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Praveen-mp/CRUD-Node/issues"
+  },
+  "homepage": "https://github.com/Praveen-mp/CRUD-Node#readme",
+  "description": ""
 }

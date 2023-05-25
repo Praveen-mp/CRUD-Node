@@ -23,7 +23,7 @@
                             <div class="alert alert-dismissable fade show alert-<%= message.type %>" 
                                 role="alert">
                                
-                                    <strong><%= message %></strong>
+                                    <strong><%= message.message %></strong>
                                 
                             </div>
                         <% } %>
@@ -45,7 +45,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% user.forEach((data,index) => { %>
+                    <% users.forEach((data,index) => { %>
                         <tr>
                         <td><%= index+1 %></td>
                         
@@ -54,12 +54,21 @@
                         <td><%= data.phone %></td>
                         <td><a href="#"><img src="<%= data.image %>" width="50" class="avatar" alt="Avatar"></a></td>
                         <td>
-                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                            <a href="/edit/<%= data.id %>" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                            <a href="/delete/<%= data.id %>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
                         </td>
                     </tr>
                     <% }) %>
-                    
+                    <tr>
+                        <td>1</td>
+                        
+                        <td>praveen</td>                        
+                        <td>test@gmail.com</td>
+                        <td>90900809</td>
+                        <td><a href="#"><img src="/uploads/image_1684609083971_Screenshot (1).png" width="50" class="avatar" alt="Avatar"></a></td>
+                        <td>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="clearfix">

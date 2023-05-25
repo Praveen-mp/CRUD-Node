@@ -12,8 +12,8 @@ const app = express()
   app.use('/public', express.static('public'));
   app.use(express.static('uploads'));
 // Connection URI
-const uri = 'mongodb://127.0.0.1:27017/node-crud';
-
+const uri = 'mongodb+srv://praveen:Praveen123@test.ox0xm.mongodb.net/test?retryWrites=true&w=majority';
+// uri.users.find().maxTimeMS(20000);
 // const mongoose = require('mongoose');
 
 // Connection URI
@@ -35,16 +35,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
       delete req.session.message; // Remove the message from session after accessing it
     next();
   });
-  app.post('/add', (req, res) => {
-    // Check user credentials and log in
-    // ...
   
-    // Set flash message
-    req.session.message = 'Login successful!';
-  
-    // Redirect to dashboard
-    res.redirect('/');
-  });
   
   //set the ejs template
   app.set('view engine','ejs')
